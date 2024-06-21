@@ -8,11 +8,15 @@ const daten = [
 
 // Funktion zum Füllen der Tabelle
 function fülleTabelle(daten) {
+  // Select the table body element
   const tbody = document.querySelector("#data-table tbody");
 
+  // Loop through each object in the data array
   daten.forEach((datum) => {
+    // Create a new table row element
     const tr = document.createElement("tr");
 
+    // Create a new table data element for the name, set its text content, and append it to the row
     const tdName = document.createElement("td");
     tdName.textContent = datum.name;
     tr.appendChild(tdName);
@@ -25,6 +29,7 @@ function fülleTabelle(daten) {
     tdStadt.textContent = datum.stadt;
     tr.appendChild(tdStadt);
 
+    // Append the row to the table body
     tbody.appendChild(tr);
   });
 }
