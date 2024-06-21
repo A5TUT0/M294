@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("sumButton");
+  const clearButton = document.getElementById("clearButton");
   const loading = document.getElementById("loading");
   const result = document.getElementById("result");
 
@@ -54,5 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     xhr.send(JSON.stringify({ numbers: numbers })); // Enviar la solicitud con los datos en formato JSON
+  });
+
+  clearButton.addEventListener("click", function () {
+    document.getElementById("num1").value = "";
+    document.getElementById("num2").value = "";
+    document.getElementById("num3").value = "";
+    document.getElementById("num4").value = "";
+    result.textContent = ""; // Limpiar el texto del resultado
   });
 });
